@@ -1,0 +1,149 @@
+import { ServiceCard } from "@/components/ui/service-card";
+import { Bot, Gamepad2, MessageSquare, Music, User, Zap } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+export function Services() {
+  const { toast } = useToast();
+
+  const handleGetService = (serviceName: string) => {
+    toast({
+      title: "Service Request",
+      description: `Join our Discord server to get ${serviceName}!`,
+    });
+    window.open('https://discord.gg/ebTTtnKb4N', '_blank');
+  };
+
+  const services = [
+    {
+      title: "Microsoft Account",
+      description: "Premium Microsoft account with Office 365 access",
+      price: "5 Invites",
+      originalPrice: "$6.99/mo",
+      icon: <User className="w-8 h-8 text-primary" />,
+      features: [
+        "Office 365 Suite",
+        "1TB OneDrive Storage",
+        "Premium Support",
+        "Xbox Live Gold",
+        "Microsoft Teams"
+      ],
+      isPopular: true,
+      isFree: false
+    },
+    {
+      title: "Roblox Account",
+      description: "Premium Roblox account with Robux and exclusive items",
+      price: "3 Invites", 
+      originalPrice: "$4.99/mo",
+      icon: <Gamepad2 className="w-8 h-8 text-primary" />,
+      features: [
+        "Monthly Robux Stipend",
+        "Exclusive Avatar Items",
+        "Premium Trading",
+        "Developer Benefits",
+        "No Ads Experience"
+      ],
+      isPopular: false,
+      isFree: false
+    },
+    {
+      title: "TikTok Account",
+      description: "Verified TikTok account with premium features",
+      price: "2 Invites",
+      originalPrice: "$2.99/mo", 
+      icon: <Music className="w-8 h-8 text-primary" />,
+      features: [
+        "Verified Badge",
+        "Extended Video Length",
+        "Advanced Analytics",
+        "Creator Fund Access",
+        "Priority Support"
+      ],
+      isPopular: false,
+      isFree: false
+    },
+    {
+      title: "Discord Account",
+      description: "Fresh Discord account ready to use",
+      price: "FREE",
+      icon: <MessageSquare className="w-8 h-8 text-primary" />,
+      features: [
+        "Fresh Account",
+        "Email Verified",
+        "Phone Verified",
+        "Clean History",
+        "Instant Delivery"
+      ],
+      isPopular: false,
+      isFree: true
+    },
+    {
+      title: "Premium Bundle",
+      description: "Get all services at a massive discount",
+      price: "8 Invites",
+      originalPrice: "$25.99/mo",
+      icon: <Zap className="w-8 h-8 text-primary" />,
+      features: [
+        "All Services Included",
+        "Priority Support",
+        "Instant Delivery",
+        "Lifetime Updates",
+        "Exclusive Access"
+      ],
+      isPopular: true,
+      isFree: false
+    }
+  ];
+
+  return (
+    <section id="services" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+            Our Services
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Choose from our premium selection of accounts and services. All delivered instantly with 24/7 support.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              price={service.price}
+              originalPrice={service.originalPrice}
+              icon={service.icon}
+              features={service.features}
+              isPopular={service.isPopular}
+              isFree={service.isFree}
+              onGetService={() => handleGetService(service.title)}
+            />
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <p className="text-muted-foreground mb-4">
+            All services come with a 30-day guarantee and 24/7 support
+          </p>
+          <div className="flex justify-center gap-4 text-sm text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <Zap className="w-4 h-4 text-primary" />
+              Instant Delivery
+            </span>
+            <span className="flex items-center gap-1">
+              <MessageSquare className="w-4 h-4 text-primary" />
+              24/7 Support
+            </span>
+            <span className="flex items-center gap-1">
+              <User className="w-4 h-4 text-primary" />
+              Verified Accounts
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
