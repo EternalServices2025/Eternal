@@ -21,11 +21,8 @@ export function Services() {
       originalPrice: "$6.99/mo",
       icon: <User className="w-8 h-8 text-primary" />,
       features: [
-        "Office 365 Suite",
-        "1TB OneDrive Storage",
-        "Premium Support",
-        "Xbox Live Gold",
-        "Microsoft Teams"
+        "Can use as alt or backup",
+        "Fast response",
       ],
       isPopular: true,
       isFree: false
@@ -37,11 +34,7 @@ export function Services() {
       originalPrice: "$4.99/mo",
       icon: <Gamepad2 className="w-8 h-8 text-primary" />,
       features: [
-        "Monthly Robux Stipend",
-        "Exclusive Avatar Items",
-        "Premium Trading",
-        "Developer Benefits",
-        "No Ads Experience"
+        "Normal account, can use for alts",
       ],
       isPopular: false,
       isFree: false
@@ -53,11 +46,7 @@ export function Services() {
       originalPrice: "$2.99/mo", 
       icon: <Music className="w-8 h-8 text-primary" />,
       features: [
-        "Verified Badge",
-        "Extended Video Length",
-        "Advanced Analytics",
-        "Creator Fund Access",
-        "Priority Support"
+        "tiktok account for alts",
       ],
       isPopular: false,
       isFree: false
@@ -66,12 +55,13 @@ export function Services() {
       title: "Discord Account",
       description: "Fresh Discord account ready to use",
       price: "SOON",
+      originalPrice: "",
       icon: <MessageSquare className="w-8 h-8 text-primary" />,
       features: [
-        "no added yet",
+        "Coming Soon"
       ],
       isPopular: false,
-      isFree: true
+      isFree: false // changed from true to false
     },
     {
       title: "Premium Bundle",
@@ -115,7 +105,11 @@ export function Services() {
               features={service.features}
               isPopular={service.isPopular}
               isFree={service.isFree}
-              onGetService={() => handleGetService(service.title)}
+              onGetService={
+                service.price !== "SOON"
+                  ? () => handleGetService(service.title)
+                  : undefined
+              }
             />
           ))}
         </div>
