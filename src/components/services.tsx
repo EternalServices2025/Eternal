@@ -65,14 +65,10 @@ export function Services() {
     {
       title: "Discord Account",
       description: "Fresh Discord account ready to use",
-      price: "FREE",
+      price: "SOON",
       icon: <MessageSquare className="w-8 h-8 text-primary" />,
       features: [
-        "Fresh Account",
-        "Email Verified",
-        "Phone Verified",
-        "Clean History",
-        "Instant Delivery"
+        "no added yet",
       ],
       isPopular: false,
       isFree: true
