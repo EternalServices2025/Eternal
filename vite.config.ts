@@ -1,13 +1,15 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+// vite.config.ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
+import { componentTagger } from 'lovable-tagger'
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Eternal/", // ✅ Your actual repo name
+  // 🔧 REMOVE OR SET EMPTY STRING FOR VERCEL
+  base: '',
+
   server: {
-    host: "::",
+    host: '::',
     port: 8080,
   },
   plugins: [
@@ -16,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-}));
+}))
