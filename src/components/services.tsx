@@ -17,7 +17,7 @@ export function Services() {
     {
       title: "Microsoft Account",
       description: "Premium Microsoft account with Office 365 access",
-      price: "5 Invites",
+      price: "7 Invites",
       originalPrice: "$6.99/mo",
       icon: <User className="w-8 h-8 text-primary" />,
       features: [
@@ -30,7 +30,7 @@ export function Services() {
     {
       title: "Roblox Account",
       description: "Premium Roblox account with Robux and exclusive items",
-      price: "3 Invites", 
+      price: "5 Invites", 
       originalPrice: "$4.99/mo",
       icon: <Gamepad2 className="w-8 h-8 text-primary" />,
       features: [
@@ -42,7 +42,7 @@ export function Services() {
     {
       title: "TikTok Account",
       description: "Verified TikTok account with premium features",
-      price: "2 Invites",
+      price: "5 Invites",
       originalPrice: "$2.99/mo", 
       icon: <Music className="w-8 h-8 text-primary" />,
       features: [
@@ -66,15 +66,13 @@ export function Services() {
     {
       title: "Premium Bundle",
       description: "Get all services at a massive discount",
-      price: "8 Invites",
+      price: "10 Invites",
       originalPrice: "$25.99/mo",
       icon: <Zap className="w-8 h-8 text-primary" />,
       features: [
-        "All Services Included",
-        "Priority Support",
-        "Instant Delivery",
-        "Lifetime Updates",
-        "Exclusive Access"
+        "Better accounts",
+        "More services",
+        "cheaper deals",
       ],
       isPopular: true,
       isFree: false
